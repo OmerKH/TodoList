@@ -10,6 +10,7 @@ const Form = ({ setInput, input, toDo, setToDo, setStatus }) => {
       ...toDo,
       { text: input, completed: false, id: Math.random() * 1000 },
     ]);
+    setInput("");
   };
 
   const handleStatus = (e) => {
