@@ -1,4 +1,5 @@
 import React from "react";
+import Priority from "./priority";
 
 const Task = ({ text, toDo, setToDo, task }) => {
   const handleDelete = () => {
@@ -20,16 +21,19 @@ const Task = ({ text, toDo, setToDo, task }) => {
   };
 
   return (
-    <div className="todo">
-      <li className={`todo-item ${task.completed ? "completed" : ""}`}>
-        {text}
-      </li>
-      <button onClick={handleDone} className="complete-btn">
-        <i class="fas fa-check"></i>
-      </button>
-      <button onClick={handleDelete} className="trash-btn">
-        <i class="fas fa-trash"></i>
-      </button>
+    <div className="choise">
+      <section className="todo">
+        <li className={`todo-item ${task.completed ? "completed" : ""}`}>
+          {text}
+        </li>
+        <button onClick={handleDone} className="complete-btn">
+          <i class="fas fa-check"></i>
+        </button>
+        <button onClick={handleDelete} className="trash-btn">
+          <i class="fas fa-trash"></i>
+        </button>
+        <Priority />
+      </section>
     </div>
   );
 };
