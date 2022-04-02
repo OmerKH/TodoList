@@ -19,6 +19,13 @@ const Form = ({ setInput, input, toDo, setToDo, setStatus }) => {
 
   return (
     <form onSubmit={handleSubmit}>
+      <div className="select">
+        <select onChange={handleStatus} name="todos" className="filter-todo">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
+        </select>
+      </div>
       <input
         onChange={textHandler}
         type="text"
@@ -29,13 +36,6 @@ const Form = ({ setInput, input, toDo, setToDo, setStatus }) => {
       <button className="todo-button" type="submit">
         Submit
       </button>
-      <div className="select">
-        <select onChange={handleStatus} name="todos" className="filter-todo">
-          <option value="all">All</option>
-          <option value="completed">Completed</option>
-          <option value="uncompleted">Uncompleted</option>
-        </select>
-      </div>
     </form>
   );
 };
