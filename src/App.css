@@ -47,7 +47,7 @@ form button:hover {
   display: flex;
   flex-direction: column;
   justify-content: start;
-  width: 25vw;
+  width: 30%;
   min-height: 600px;
   background: linear-gradient(
     90deg,
