@@ -75,16 +75,18 @@ const Form = () => {
             <option value="uncompleted">Uncompleted</option>
           </select>
         </div>
-        <input
-          onChange={textHandler}
-          type="text"
-          className="todo-input"
-          placeholder="Add Task"
-          value={input}
-        />
-        <button className="todo-button" type="submit">
-          Submit
-        </button>
+        <div className="input-group">
+          <input
+            onChange={textHandler}
+            type="text"
+            className="todo-input"
+            placeholder="Add Task"
+            value={input}
+          />
+          <button className="todo-button" type="submit">
+            Submit
+          </button>
+        </div>
       </form>
       <ToDoList toDo={toDo} setToDo={setToDo} filtered={filtered} />
     </div>
