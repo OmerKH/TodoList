@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import ToDoList from "./TodoList";
-import Priority from "./priority";
 
 const Form = () => {
   // State
@@ -56,7 +55,7 @@ const Form = () => {
     e.preventDefault();
     setToDo([
       ...toDo,
-      { text: input, completed: false, id: Math.random() * 1000 },
+      { text: input, completed: false, id: Math.random() * 1000, p: "REGULAR" },
     ]);
     setInput("");
   };

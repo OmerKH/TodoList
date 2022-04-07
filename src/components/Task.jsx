@@ -27,12 +27,12 @@ const Task = ({ text, toDo, setToDo, task }) => {
           {text}
         </li>
         <button onClick={handleDone} className="complete-btn">
-          <i class="fas fa-check"></i>
+          <i className="fas fa-check"></i>
         </button>
         <button onClick={handleDelete} className="trash-btn">
-          <i class="fas fa-trash"></i>
+          <i className="fas fa-trash"></i>
         </button>
-        {/* <Priority /> */}
+        <Priority />
       </section>
     </div>
   );

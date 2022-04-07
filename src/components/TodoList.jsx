@@ -12,6 +12,7 @@ const ToDoList = ({ toDo, setToDo, filtered }) => {
             setToDo={setToDo}
             text={task.text}
             key={task.id}
+            lable={task.p}
           />
         ))}
       </ul>
