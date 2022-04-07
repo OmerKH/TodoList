@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-const Priority = ({ toDo }) => {
+const Priority = ({ toDo, setToDo, task }) => {
   const [lable, setLable] = useState("");
   const [category, setCategory] = useState([]);
 

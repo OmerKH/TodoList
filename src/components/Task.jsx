@@ -32,7 +32,7 @@ const Task = ({ text, toDo, setToDo, task }) => {
         <button onClick={handleDelete} className="trash-btn">
           <i className="fas fa-trash"></i>
         </button>
-        <Priority />
+        <Priority task={task} toDo={toDo} setToDo={setToDo} />
       </section>
     </div>
   );
