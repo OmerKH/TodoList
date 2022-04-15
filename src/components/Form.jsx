@@ -1,94 +1,36 @@
-import React, { useEffect, useState } from "react";
-import ToDoList from "./TodoList";
+import React, { useState } from "react";
+// import ToDoList from "./TodoList";
+import Selector from "./Selector";
+import InputBar from "./InputBar";
 
-const Form = () => {
+const Form = ({ toDo, status, setToDo, setStatus, onSubmit }) => {
   // State
   const [input, setInput] = useState("");
-  const [toDo, setToDo] = useState([]);
-  const [status, setStatus] = useState("All");
-  const [filtered, setFiltered] = useState([]);
 
-  //Effect-1
-  useEffect(() => {
-    localGet();
-  }, []);
-
-  //Effect-2
-  useEffect(() => {
-    localStore();
-    handleSwitch();
-  }, [toDo, status]);
-
-  //Storage
-  const localStore = () => {
-    localStorage.setItem("toDo", JSON.stringify(toDo));
-  };
-
-  const localGet = () => {
-    if (localStorage.getItem("toDo") === null) {
-      localStorage.setItem("toDo", JSON.stringify([]));
-    } else {
-      let storage = JSON.parse(localStorage.getItem("toDo"));
-      setToDo(storage);
-    }
-  };
-
-  //Function
-  const handleSwitch = () => {
-    switch (status) {
-      case "completed":
-        setFiltered(toDo.filter((task) => task.completed === true));
-        break;
-      case "uncompleted":
-        setFiltered(toDo.filter((task) => task.completed === false));
-        break;
-      default:
-        setFiltered(toDo);
-        break;
-    }
-  };
-
-  const textHandler = (e) => {
-    setInput(e.target.value);
-  };
   const handleSubmit = (e) => {
     e.preventDefault();
-    setToDo([
-      ...toDo,
-      { text: input, completed: false, id: Math.random() * 1000, p: "REGULAR" },
-    ]);
+
+    onSubmit({
+      text: input,
+      completed: false,
+      id: Math.random() * 1000,
+      p: "REGULAR",
+    });
     setInput("");
   };
 
-  const handleStatus = (e) => {
-    setStatus(e.target.value);
-  };
-
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div className="select">
-          <select onChange={handleStatus} name="todos" className="filter-todo">
-            <option value="all">All</option>
-            <option value="completed">Completed</option>
-            <option value="uncompleted">Uncompleted</option>
-          </select>
-        </div>
-        <div className="input-group">
-          <input
-            onChange={textHandler}
-            type="text"
-            className="todo-input"
-            placeholder="Add Task"
-            value={input}
-          />
-          <button className="todo-button" type="submit">
-            Submit
-          </button>
-        </div>
+    <React.Fragment>
+      <header className="head">
+        <h1>My Tasks</h1>
+      </header>
+      <form onSubmit={handleSubmit} className="task-form">
+        <React.Fragment>
+          <Selector toDo={toDo} setToDo={setToDo} setStatus={setStatus} />
+          <InputBar input={input} setInput={setInput} />
+        </React.Fragment>
       </form>
-      <ToDoList toDo={toDo} setToDo={setToDo} filtered={filtered} />
-    </div>
+    </React.Fragment>
   );
 };
 export default Form;
