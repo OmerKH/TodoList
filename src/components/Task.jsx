@@ -54,7 +54,7 @@ const Task = ({ text, toDo, setToDo, task, updateTask }) => {
           className="high-btn"
           onClick={() => setEdit({ id: task.id, value: task.text })}
         >
-          <i className="fa fa-circle"></i>
+          <i className="fa fa-bars"></i>
         </button>
       </section>
     </div>

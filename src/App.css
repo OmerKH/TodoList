@@ -138,15 +138,15 @@ form button:hover {
   border-radius: 10px;
 }
 .high-btn {
-  background: transparent;
-  color: #d40707;
+  background: white;
+  color: #1807d4;
 }
 
-.high-btn:hover {
+/* .high-btn:hover {
   background: #d40707;
-  color: #f7fffe;
+  color: #0142ce;
   transition: all 0.7s ease;
-}
+} */
 
 .todo-item {
   background: #fff;
