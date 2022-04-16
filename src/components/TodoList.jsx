@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Form from "./Form";
 import Task from "./Task";
+import Selector from "./Selector";
 
 const ToDoList = () => {
   // State
@@ -49,6 +50,16 @@ const ToDoList = () => {
     }
   };
 
+  const updateTask = (taskId, newVlaue) => {
+    if (!newVlaue.text || /^\s*$/.test(newVlaue.text)) {
+      return;
+    }
+
+    setToDo((prev) =>
+      prev.map((item) => (item.id === taskId ? newVlaue : item))
+    );
+  };
+
   const addTask = (task) => {
     if (!task.text || /^\s*$/.test(task.text)) {
       return;
@@ -61,6 +72,15 @@ const ToDoList = () => {
 
   return (
     <div>
+      <header className="head">
+        <h1>My Tasks</h1>
+        <Selector
+          className="select"
+          toDo={toDo}
+          setToDo={setToDo}
+          setStatus={setStatus}
+        />
+      </header>
       <Form
         toDo={toDo}
         setToDo={setToDo}
@@ -79,6 +99,7 @@ const ToDoList = () => {
               key={task.id}
               lable={task.p}
               setLable={setLable}
+              updateTask={updateTask}
             />
           ))}
         </ul>

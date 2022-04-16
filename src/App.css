@@ -12,6 +12,7 @@ body {
 }
 header {
   font-size: 2rem;
+  margin-left: 1rem;
 }
 
 header,
@@ -108,7 +109,7 @@ form button:hover {
   transition: all 1s ease;
 }
 .filter-todo {
-  padding: 1rem;
+  padding: 0.5rem;
 }
 .todo li {
   flex: 1;
@@ -123,8 +124,8 @@ form button:hover {
 .trash-btn,
 .complete-btn,
 .high-btn {
-  background: #ff6f47;
-  color: white;
+  background: none;
+  color: #ff6f47;
   border: none;
   padding: 1rem;
   cursor: pointer;
@@ -132,7 +133,8 @@ form button:hover {
   border-radius: 10px;
 }
 .complete-btn {
-  background: rgb(11, 212, 162);
+  background: none;
+  color: rgb(11, 212, 162);
   border-radius: 10px;
 }
 .high-btn {
@@ -172,6 +174,10 @@ form button:hover {
   opacity: 0.5;
 }
 
+.HIGH {
+  background: #d4070780;
+}
+
 /*CUSTOM SELECTOR */
 select {
   -webkit-appearance: none;
@@ -186,6 +192,7 @@ select {
 
 /* Custom Select */
 .select {
+  display: flex;
   border-radius: 10px;
   margin: 1rem;
   position: relative;
@@ -203,7 +210,8 @@ select {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 1rem;
+  padding: 0.5rem;
+  font-size: 1rem;
   background: #ff6f47;
   cursor: pointer;
   pointer-events: none;

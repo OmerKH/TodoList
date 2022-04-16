@@ -1,11 +1,29 @@
-import React from "react";
+// import React from "react";
 
-const Priority = (setLable) => {
-  const handlePriority = (e) => {
-    setLable(e.target.value);
-  };
+// const Priority = (setLable) => {
+//   const handlePriority = (e) => {
+//     setLable(e.target.value);
+//   };
 
-  return <div className="priority select"></div>;
-};
+//   // const handlestat = () => {
+//   //   setToDo(
+//   //     toDo.map((item) => {
+//   //       if (item.p === "REGULAR") {
+//   //         return {
+//   //           ...item,
+//   //           p: "HIGH",
+//   //         };
+//   //       } else {
+//   //         return {
+//   //           ...item,
+//   //           p: "REGULAR",
+//   //         };
+//   //       }
+//   //     })
+//   //   );
+//   // };
 
-export default Priority;
+//   return <div className="priority select"></div>;
+// };
+
+// export default Priority;
